@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/don-doi-ca/:id", "destination": "/api/don-doi-ca/[id]" },
+    { "source": "/api/don-doi-ca", "destination": "/api/don-doi-ca" },
+    { "source": "/(.*)", "destination": "/public/$1" }
+  ]
+}

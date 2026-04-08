@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đơn Xin Phép | TRUNG TÂM QUẢN LÝ ĐIỀU HÀNH GIAO THÔNG ĐÔ THỊ</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300b4ff'/%3E%3Cstop offset='100%25' stop-color='%230066cc'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300d68f'/%3E%3Cstop offset='100%25' stop-color='%2300996a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='8' fill='%23060e1e'/%3E%3Ccircle cx='18' cy='18' r='16' fill='%2308142a' stroke='url(%23a)' stroke-width='1.5'/%3E%3Ccircle cx='18' cy='18' r='12' fill='%23040c1a'/%3E%3Cpath d='M11 15 C11 9 15.5 7 18 9.5' fill='none' stroke='%2300b4ff' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpolygon points='18,5.5 18,13.5 23,9.5' fill='%2300b4ff'/%3E%3Cpath d='M25 21 C25 27 20.5 29 18 26.5' fill='none' stroke='%2300d68f' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpolygon points='18,30.5 18,22.5 13,26.5' fill='%2300d68f'/%3E%3Ccircle cx='18' cy='18' r='2.2' fill='%2300b4ff' opacity='.9'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Decorative elements -->
+<div class="light-trail"></div>
+<div class="scanlines"></div>
+<div class="corner c-tl"></div>
+<div class="corner c-tr"></div>
+<div class="corner c-bl"></div>
+<div class="corner c-br"></div>
+
+<div class="no-print">
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-emblem">
+        <img src="logo.png" alt="TRUNG TÂM QUẢN LÝ ĐIỀU HÀNH GIAO THÔNG ĐÔ THỊ" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+      <div class="logo-info">
+        <div class="logo-main">TRUNG TÂM QUẢN LÝ ĐIỀU HÀNH GIAO THÔNG ĐÔ THỊ</div>
+        <div class="logo-sub">ĐỘI VẬN HÀNH BẢO TRÌ ĐƯỜNG HẦM</div>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="sys-status">
+        <div class="status-dot"></div>
+        HỆ THỐNG HOẠT ĐỘNG
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="date-badge" id="dateBadge">—</div>
+      <div class="clock" id="clock">00:00:00</div>
+    </div>
+  </header>
+
+  <!-- ── HERO STRIP ── -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-breadcrumb">
+        TRUNG TÂM QUẢN LÝ ĐIỀU HÀNH GIAO THÔNG ĐÔ THỊ <span>›</span> Vận Hành <span>›</span> Xin Phép
+      </div>
+      <div class="nav-tabs">
+        <a href="index.html" class="nav-tab">🔄 ĐỔI CA</a>
+        <a href="xin-phep.html" class="nav-tab active">📋 XIN NGHỈ PHÉP</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num" id="stat-total">—</div><div class="hstat-lbl">Tổng đơn</div></div>
+      <div class="hstat"><div class="hstat-num" id="stat-month">—</div><div class="hstat-lbl">Tháng này</div></div>
+      <div class="hstat"><div class="hstat-num" id="stat-today">—</div><div class="hstat-lbl">Hôm nay</div></div>
+    </div>
+  </div>
+
+  <!-- ── MAIN ── -->
+  <div class="main">
+
+    <!-- Left: Form -->
+    <div class="col-left">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><div class="panel-title-icon"></div>TẠO ĐƠN XIN PHÉP</div>
+          <div class="panel-tag">FORM</div>
+        </div>
+        <div class="panel-inner">
+        <form id="frm">
+          <div class="field"><label>Tên người làm đơn</label>
+            <select id="nx" required><option value="" disabled selected>— Chọn tên —</option>
+              <option value="Nguyễn Thanh Phúc">Nguyễn Thanh Phúc</option><option value="Trương Xuân Hùng">Trương Xuân Hùng</option><option value="Phạm Tấn Tài">Phạm Tấn Tài</option><option value="Nguyễn Thị Xuân Nữ">Nguyễn Thị Xuân Nữ</option><option value="Phạm Anh Tuấn">Phạm Anh Tuấn</option><option value="Đặng Minh Nam">Đặng Minh Nam</option><option value="Võ Tấn Nghĩa">Võ Tấn Nghĩa</option><option value="Nguyễn Phương">Nguyễn Phương</option><option value="Đặng Thái Nguyên">Đặng Thái Nguyên</option><option value="Lê Tuấn Anh">Lê Tuấn Anh</option><option value="Cái Huy Hùng Tâm">Cái Huy Hùng Tâm</option><option value="Phạm Đình Liêm">Phạm Đình Liêm</option><option value="Đinh Hoàng Việt">Đinh Hoàng Việt</option><option value="Trương Lê Khoa Vũ">Trương Lê Khoa Vũ</option><option value="Nguyễn Tuyên Hưng">Nguyễn Tuyên Hưng</option><option value="Võ Minh Chánh">Võ Minh Chánh</option><option value="Trương Ca Fương">Trương Ca Fương</option><option value="Nguyễn Nhật Tiến">Nguyễn Nhật Tiến</option><option value="Đặng Quang Chương">Đặng Quang Chương</option><option value="Đoàn Văn Tài">Đoàn Văn Tài</option><option value="Giang Bảo Tâm">Giang Bảo Tâm</option><option value="Nguyễn Xuân Tươm">Nguyễn Xuân Tươm</option><option value="Đinh Văn Thành">Đinh Văn Thành</option><option value="Phạm Huy Chuẩn">Phạm Huy Chuẩn</option><option value="Mai Xuân Khoa">Mai Xuân Khoa</option><option value="Ngụy Huỳnh Trung">Ngụy Huỳnh Trung</option><option value="Huỳnh Hiếu Thịnh">Huỳnh Hiếu Thịnh</option><option value="Nguyễn Minh Trung">Nguyễn Minh Trung</option><option value="Nguyễn Ngọc Duy">Nguyễn Ngọc Duy</option><option value="Phan Quốc Nhật">Phan Quốc Nhật</option><option value="Võ Văn Hoài">Võ Văn Hoài</option><option value="Nguyễn Văn Hậu">Nguyễn Văn Hậu</option><option value="Hồ Trung Hiếu">Hồ Trung Hiếu</option><option value="Dương Đại Nghĩa">Dương Đại Nghĩa</option><option value="Phạm Bá Quỳnh">Phạm Bá Quỳnh</option><option value="Đặng Ngọc Hòa">Đặng Ngọc Hòa</option><option value="Nguyễn Quốc Thái">Nguyễn Quốc Thái</option><option value="Nguyễn Thanh Thuận">Nguyễn Thanh Thuận</option><option value="Bùi Đình Khánh">Bùi Đình Khánh</option><option value="Trần Minh Tân">Trần Minh Tân</option><option value="Nguyễn Thành Long">Nguyễn Thành Long</option><option value="Nguyễn Thành Tâm">Nguyễn Thành Tâm</option><option value="Hồng Mạnh Thái">Hồng Mạnh Thái</option><option value="Nguyễn Minh Thảo">Nguyễn Minh Thảo</option><option value="Trần Hải Dương">Trần Hải Dương</option><option value="Đoàn Văn Hạnh">Đoàn Văn Hạnh</option><option value="Nguyễn Huỳnh">Nguyễn Huỳnh</option><option value="Nguyễn Hoài Nam">Nguyễn Hoài Nam</option><option value="Bùi Văn Hùng">Bùi Văn Hùng</option><option value="Phan Hoàng Thanh">Phan Hoàng Thanh</option><option value="Trần Quang Vinh">Trần Quang Vinh</option><option value="Võ Đông Đức">Võ Đông Đức</option><option value="Trương Hoài Long">Trương Hoài Long</option><option value="Vũ Văn Trọng">Vũ Văn Trọng</option><option value="Võ Kim An">Võ Kim An</option><option value="Nguyễn Thanh Tân">Nguyễn Thanh Tân</option><option value="Chu Văn Trường">Chu Văn Trường</option><option value="Trần Phúc Qui">Trần Phúc Qui</option>
+            </select></div>
+          <div class="row2">
+            <div class="field"><label>Chức vụ</label>
+              <select id="cv" required>
+                <option value="" disabled selected>— Chọn chức vụ —</option>
+                <option value="Phó Đội trưởng">Phó Đội trưởng</option>
+                <option value="Trưởng ca điều hành">Trưởng ca điều hành</option>
+                <option value="Kỹ sư">Kỹ sư</option>
+                <option value="Chuyên viên">Chuyên viên</option>
+                <option value="Cán sự">Cán sự</option>
+                <option value="Kỹ thuật viên">Kỹ thuật viên</option>
+                <option value="Nhân viên kỹ thuật">Nhân viên kỹ thuật</option>
+                <option value="Nhân viên">Nhân viên</option>
+              </select>
+            </div>
+            <div class="field"><label>Thời gian làm việc tại TT</label>
+               <select id="tglv">
+                  <option value="Dưới 1 năm">Dưới 1 năm</option>
+                  <option value="1 năm">1 năm</option><option value="2 năm">2 năm</option><option value="3 năm">3 năm</option><option value="4 năm">4 năm</option><option value="5 năm">5 năm</option><option value="6 năm">6 năm</option><option value="7 năm">7 năm</option><option value="8 năm">8 năm</option><option value="9 năm">9 năm</option><option value="10 năm">10 năm</option><option value="11 năm">11 năm</option><option value="12 năm">12 năm</option><option value="13 năm">13 năm</option><option value="14 năm">14 năm</option><option value="15 năm">15 năm</option><option value="16 năm">16 năm</option><option value="17 năm">17 năm</option><option value="18 năm">18 năm</option><option value="19 năm">19 năm</option><option value="20 năm">20 năm</option><option value="21 năm">21 năm</option><option value="22 năm">22 năm</option><option value="23 năm">23 năm</option><option value="24 năm">24 năm</option><option value="25 năm">25 năm</option><option value="Trên 25 năm">Trên 25 năm</option>
+               </select>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field"><label>Số ngày phép được hưởng</label><input type="number" id="np_huong" placeholder="VD: 12" value="12" min="0"></div>
+            <div class="field"><label>Số ngày phép đã sử dụng</label><input type="number" id="np_dung" placeholder="VD: 0" value="0" min="0"></div>
+          </div>
+          <div class="field"><label>Số ngày phép còn lại: <span id="np_con" style="color:var(--green);font-size:.8rem;font-weight:700">12</span> ngày</label></div>
+          <div class="sec-label"><div class="sec-label-dot"></div>Thông tin nghỉ phép</div>
+          <div class="row2">
+            <div class="field"><label>Số ngày xin nghỉ</label><input type="number" id="sn" required placeholder="VD: 2" min="0.5" step="0.5"></div>
+            <div class="field"><label>Nơi nghỉ phép</label><input type="text" id="nn" required placeholder="VD: TP.HCM"></div>
+          </div>
+          <div class="row2" style="margin-bottom:1rem">
+            <div class="field"><label>Từ ngày</label>
+              <input type="date" id="n_tu" required>
+            </div>
+            <div class="field"><label>Đến hết ngày</label>
+              <input type="date" id="n_den" required>
+            </div>
+          </div>
+          <div class="field">
+            <label>Lý do nghỉ phép</label>
+            <textarea id="ld" required placeholder="VD: Nghỉ phép thường niên"></textarea>
+          </div>
+          <div class="btn-row">
+            <button type="button" id="btnWord" class="btn btn-word">📄 WORD</button>
+            <button type="button" id="btnPrint" class="btn btn-print">🖨 IN</button>
+            <button type="button" id="btnPdf" class="btn btn-pdf">📑 PDF</button>
+            <button type="submit" class="btn btn-save">💾 LƯU ĐƠN</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Table + Chart -->
+    <div class="col-right">
+
+      <!-- AI ASSISTANT PANEL -->
+      <!-- AI ASSISTANT PANEL REMOVED -->
+<div class="panel" style="margin-bottom:1.5rem">
+        <div class="panel-header">
+          <div class="panel-title"><div class="panel-title-icon"></div>THỐNG KÊ XIN PHÉP</div>
+          <div class="panel-tag">ANALYTICS</div>
+        </div>
+        <div style="display:flex;gap:1.25rem;padding:1rem 1.5rem">
+          <!-- Biểu đồ 6 tháng -->
+          <div style="flex:1.6;min-width:0">
+            <div style="font-size:0.62rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Đơn xin phép 6 tháng gần nhất</div>
+            <div style="height:160px;position:relative">
+              <canvas id="chartXinPhep"></canvas>
+            </div>
+          </div>
+          <!-- Thống kê nhân viên tháng này -->
+          <div style="flex:1;min-width:160px;border-left:1px solid var(--border);padding-left:1.25rem">
+            <div style="font-size:0.62rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Tháng này — lượt đổi ca</div>
+            <div id="thongKeNV" style="max-height:160px;overflow-y:auto"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bảng lịch sử -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><div class="panel-title-icon"></div>LỊCH SỬ ĐƠN ĐÃ LƯU</div>
+          <div class="panel-tag">DATABASE</div>
+        </div>
+        <!-- Filter bar -->
+        <div style="display:flex;gap:8px;align-items:center;padding:.75rem 1.5rem;border-bottom:1px solid var(--border);background:rgba(0,0,0,.2)">
+          <div style="font-size:.62rem;color:var(--muted);letter-spacing:1px;white-space:nowrap">LỌC:</div>
+          <select id="filterTen" onchange="applyFilter()" style="flex:1;background:rgba(0,0,0,.3);border:1px solid var(--border);color:var(--text);padding:5px 10px;border-radius:3px;font-size:.78rem;font-family:inherit">
+            <option value="">— Tất cả nhân viên —</option>
+            <option value="Nguyễn Thanh Phúc">Nguyễn Thanh Phúc</option><option value="Trương Xuân Hùng">Trương Xuân Hùng</option><option value="Phạm Tấn Tài">Phạm Tấn Tài</option><option value="Nguyễn Thị Xuân Nữ">Nguyễn Thị Xuân Nữ</option><option value="Phạm Anh Tuấn">Phạm Anh Tuấn</option><option value="Đặng Minh Nam">Đặng Minh Nam</option><option value="Võ Tấn Nghĩa">Võ Tấn Nghĩa</option><option value="Nguyễn Phương">Nguyễn Phương</option><option value="Đặng Thái Nguyên">Đặng Thái Nguyên</option><option value="Lê Tuấn Anh">Lê Tuấn Anh</option><option value="Cái Huy Hùng Tâm">Cái Huy Hùng Tâm</option><option value="Phạm Đình Liêm">Phạm Đình Liêm</option><option value="Đinh Hoàng Việt">Đinh Hoàng Việt</option><option value="Trương Lê Khoa Vũ">Trương Lê Khoa Vũ</option><option value="Nguyễn Tuyên Hưng">Nguyễn Tuyên Hưng</option><option value="Võ Minh Chánh">Võ Minh Chánh</option><option value="Trương Ca Fương">Trương Ca Fương</option><option value="Nguyễn Nhật Tiến">Nguyễn Nhật Tiến</option><option value="Đặng Quang Chương">Đặng Quang Chương</option><option value="Đoàn Văn Tài">Đoàn Văn Tài</option><option value="Giang Bảo Tâm">Giang Bảo Tâm</option><option value="Nguyễn Xuân Tươm">Nguyễn Xuân Tươm</option><option value="Đinh Văn Thành">Đinh Văn Thành</option><option value="Phạm Huy Chuẩn">Phạm Huy Chuẩn</option><option value="Mai Xuân Khoa">Mai Xuân Khoa</option><option value="Ngụy Huỳnh Trung">Ngụy Huỳnh Trung</option><option value="Huỳnh Hiếu Thịnh">Huỳnh Hiếu Thịnh</option><option value="Nguyễn Minh Trung">Nguyễn Minh Trung</option><option value="Nguyễn Ngọc Duy">Nguyễn Ngọc Duy</option><option value="Phan Quốc Nhật">Phan Quốc Nhật</option><option value="Võ Văn Hoài">Võ Văn Hoài</option><option value="Nguyễn Văn Hậu">Nguyễn Văn Hậu</option><option value="Hồ Trung Hiếu">Hồ Trung Hiếu</option><option value="Dương Đại Nghĩa">Dương Đại Nghĩa</option><option value="Phạm Bá Quỳnh">Phạm Bá Quỳnh</option><option value="Đặng Ngọc Hòa">Đặng Ngọc Hòa</option><option value="Nguyễn Quốc Thái">Nguyễn Quốc Thái</option><option value="Nguyễn Thanh Thuận">Nguyễn Thanh Thuận</option><option value="Bùi Đình Khánh">Bùi Đình Khánh</option><option value="Trần Minh Tân">Trần Minh Tân</option><option value="Nguyễn Thành Long">Nguyễn Thành Long</option><option value="Nguyễn Thành Tâm">Nguyễn Thành Tâm</option><option value="Hồng Mạnh Thái">Hồng Mạnh Thái</option><option value="Nguyễn Minh Thảo">Nguyễn Minh Thảo</option><option value="Trần Hải Dương">Trần Hải Dương</option><option value="Đoàn Văn Hạnh">Đoàn Văn Hạnh</option><option value="Nguyễn Huỳnh">Nguyễn Huỳnh</option><option value="Nguyễn Hoài Nam">Nguyễn Hoài Nam</option><option value="Bùi Văn Hùng">Bùi Văn Hùng</option><option value="Phan Hoàng Thanh">Phan Hoàng Thanh</option><option value="Trần Quang Vinh">Trần Quang Vinh</option><option value="Võ Đông Đức">Võ Đông Đức</option><option value="Trương Hoài Long">Trương Hoài Long</option><option value="Vũ Văn Trọng">Vũ Văn Trọng</option><option value="Võ Kim An">Võ Kim An</option><option value="Nguyễn Thanh Tân">Nguyễn Thanh Tân</option><option value="Chu Văn Trường">Chu Văn Trường</option><option value="Trần Phúc Qui">Trần Phúc Qui</option>
+          </select>
+          <input id="filterThang" type="month" onchange="applyFilter()" style="background:rgba(0,0,0,.3);border:1px solid var(--border);color:var(--text);padding:5px 10px;border-radius:3px;font-size:.78rem;font-family:inherit;width:140px">
+          <button onclick="clearFilter()" style="background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--muted);padding:5px 12px;border-radius:3px;font-size:.72rem;cursor:pointer;font-family:inherit;white-space:nowrap">✕ Xóa lọc</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th>Ngày tạo</th>
+              <th>Người xin phép</th>
+              <th>Số ngày</th>
+              <th>Thời gian & Nơi nghỉ</th>
+              <th>Thao tác</th>
+            </tr></thead>
+            <tbody id="tbody">
+              <tr><td colspan="5" class="empty">⏳ ĐANG TẢI DỮ LIỆU...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- PRINT AREA -->
+<div id="pA" class="print-area"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="xin-phep.js"></script>
+</body>
+</html>

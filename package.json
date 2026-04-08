@@ -1,0 +1,8 @@
+{
+  "name": "doi-ca-truc-van-hanh",
+  "version": "1.0.0",
+  "description": "Phần mềm Đổi Ca Trực Vận Hành",
+  "dependencies": {
+    "@vercel/kv": "^1.0.0"
+  }
+}
