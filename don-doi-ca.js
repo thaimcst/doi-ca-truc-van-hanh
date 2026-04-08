@@ -1,4 +1,6 @@
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+const redis = Redis.fromEnv();
 
 export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -8,17 +10,17 @@ export default async function handler(req, res) {
 
     try {
         if (req.method === 'GET') {
-            const data = await kv.get('don_doi_ca') || [];
+            const data = await redis.get('don_doi_ca') || [];
             return res.json(data);
         }
 
         if (req.method === 'POST') {
-            const data = await kv.get('don_doi_ca') || [];
+            const data = await redis.get('don_doi_ca') || [];
             const newRecord = req.body;
             newRecord.id = Date.now().toString();
             newRecord.createdAt = new Date().toISOString();
             data.push(newRecord);
-            await kv.set('don_doi_ca', data);
+            await redis.set('don_doi_ca', data);
             return res.json({ success: true, record: newRecord });
         }
 
